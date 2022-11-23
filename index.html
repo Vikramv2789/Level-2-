@@ -1,26 +1,57 @@
 <!DOCTYPE html>
-<html>
-    <body onload = "intialize();">
-        <div>
-        <img src="doctor who.jpg"/>
-        <span></span>
-        </div>
-        <hr />
-
-        <h1>Old Doctors</h1>
-        <img src="images/jon pertwee.jpg">
-        <img src="images/matt smith.jpg">
-        <img src="images/tom baker.jpg">
-    </body>
-
-
-
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
     <style>
         div{
-            text-align: center;
-        }
-        img{
-            float: left;
-            padding-right: 20px;
+            color:black;
+            background-color: orange;
         }
     </style>
+    <script>
+        function initialize()
+        {
+            halloweenText = document.getElementById("colordiv");
+            fore = "black";
+            back = "orange";
+
+            textWidth = 100;
+        }
+        function toggleColor(){
+            var temp = fore;
+            fore = back;
+            back = tmp;
+
+            display();
+        }
+        function display()
+        {
+            halloweenText.style.color = fore;
+            halloweenText.style.backgroundColor = back;
+            halloweenText.style.width = textWidth + "%";
+        }
+        function changeWidth()
+        {
+            textWidth = w;
+            display();
+        }
+    </script>
+</head>
+<body onload = "intialize();">
+   <div id ="colordiv">
+    Click the button to switch me from orange to black and back again and again. Happy Halloween.
+   </div> 
+   <p>
+    <button onclick = "toggleColor();"> Toggle Colors</button>
+    <button onclick = "changeWidth(25);"> Change 25% Width</button>
+    <button onclick = "changeWidth(50);">Change 50% Width</button>
+    <button onclick = "changeWidth(75);"> Change 75% Width</button>
+    <button onclick = "changeWidth(100);">Change 50% Width</button>
+
+
+   </p>
+</body>
+</html>
